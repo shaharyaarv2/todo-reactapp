@@ -1,5 +1,11 @@
-export function Header(){
+export function Header(props){
+    const {todos} = props
+    const todoLength = todos.length
+    const isTasksPlural = todos.length !=1
+    const taskOrTasks = isTasksPlural ? 'tasks' : 'task'
     return (
-        <header></header>
+        <header>
+            <h1>You have {todoLength} open {taskOrTasks} </h1>
+        </header>
     )
 }
